@@ -136,7 +136,11 @@ const App = () => {
             <input
               type="text"
               name="filterValue"
-              placeholder="Filter Value"
+              placeholder={
+                filterField === "dob"
+                  ? "YY/MM/DD"
+                  : filterField === "mobile_number"?"Enter Phone":"Select A Field"
+              }
               className="border border-gray-700 rounded-lg px-4 py-2 bg-gray-800 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
               value={filterValue}
               onChange={(e) => setFilterValue(e.target.value)}
@@ -163,9 +167,7 @@ const App = () => {
       </div>
 
       <div className="mt-12 shadow-md border border-gray-700 rounded-lg overflow-x-auto">
-      
-          {loading ? <TableShimmer /> : <Table tableItems={tableItems} />}
-     
+        {loading ? <TableShimmer /> : <Table tableItems={tableItems} />}
       </div>
 
       <div className="flex justify-between items-center mt-4">
