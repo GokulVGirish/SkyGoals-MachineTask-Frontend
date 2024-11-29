@@ -32,7 +32,7 @@ const App = () => {
     const fetchData = async () => {
       setLoading((prevState) => !prevState);
       try {
-        const response = await instance.get(`/customers`, {
+        const response = await instance.get(`/api/customers`, {
           params: {
             page,
             limit,
