@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading((prevState) => !prevState);
+      setLoading((prevState) => !prevState); 
       try {
         const response = await instance.get(`/api/customers`, {
           params: {
