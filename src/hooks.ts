@@ -7,6 +7,7 @@ const useDebounce=(value:string,delay:number)=>{
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
      useEffect(() => {
        if (timeoutRef.current) {
+        
          clearTimeout(timeoutRef.current);
        }
        timeoutRef.current = setTimeout(() => {
